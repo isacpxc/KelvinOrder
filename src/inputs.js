@@ -17,8 +17,15 @@ export default function Inputs(props){
     let mediana=0;
     let media=0;
     for (let i=0;i<props.number;i++){
-      arr.push(document.getElementById((i+1)).value);
-      media+=arr[i]/props.number;
+      if (document.getElementById((i+1)).value>=0) {
+        arr.push(document.getElementById((i+1)).value);
+        media+=arr[i]/props.number;
+      }else{
+        alert("A temperatura kelvin apenas aceita valores maiores que 0, refaça a operação!");
+        return 0;
+      }
+       
+      
     }
     arr.sort((function(a,b){
       return a - b;
@@ -39,7 +46,7 @@ export default function Inputs(props){
         <div action="" method="get" id="form2">
           
           {
-            inputs.map((id)=><input placeholder={id+"ª Temperatura"} min="0" className="integerTimes" key={id} id={id}/>)
+            inputs.map((id)=><input placeholder={id+"ª Temperatura"} className="integerTimes" key={id} id={id}/>)
           }
           <button type="submit" id="submitTemp" onClick={sendInp}>Ordenar</button>
           
