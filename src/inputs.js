@@ -39,7 +39,7 @@ export default function Inputs(props){
         <div action="" method="get" id="form2">
           
           {
-            inputs.map((id)=><input placeholder={id+"ª Temperatura"} className="integerTimes" key={id} id={id}/>)
+            inputs.map((id)=><input placeholder={id+"ª Temperatura"} min="0" className="integerTimes" key={id} id={id}/>)
           }
           <button type="submit" id="submitTemp" onClick={sendInp}>Ordenar</button>
           
